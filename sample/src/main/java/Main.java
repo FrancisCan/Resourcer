@@ -49,7 +49,7 @@ public class Main {
 
     public Main() {
 
-        new Resourcer.Builder("src" + File.separator + "main" + File.separator + "res").build();
+        new Resourcer.Builder("src/main/res").build();
 
         Resourcer.bind(this);
 

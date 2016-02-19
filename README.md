@@ -2,7 +2,7 @@
 Java Resources Annotations
 
 [![](https://jitpack.io/v/fcannizzaro/resourcer.svg)](https://jitpack.io/#fcannizzaro/resourcer)
-[![Build Status](https://travis-ci.org/fcannizzaro/resourcer.svg?branch=master)](https://travis-ci.org/fcannizzaro/resourcer)
+[![Build Status](https://travis-ci.org/fcannizzaro/resourcer.svg)](https://travis-ci.org/fcannizzaro/resourcer)
 
 # Install
 
@@ -64,7 +64,7 @@ public static void main(String[] args) {
   Main instance = new Main();
 
   // only first time setup path
-  new Resourcer.Builder("src\\main\\res")  // required
+  new Resourcer.Builder("src/main/res")  // required
                .setImageDir("images")      // default
                .setAudioDir("audio")       // default
                .setJsonDir("json")         // default
