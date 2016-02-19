@@ -1,0 +1,11 @@
+{
+  "body": {
+    "something": [
+      "item"
+    ],
+    "nested": {
+      "number": 5,
+      "string": "Test"
+    }
+  }
+}
