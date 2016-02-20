@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.fcannizzaro:resourcer:1.0.6'
+    compile 'com.github.fcannizzaro:resourcer:1.0.7'
 }
 ```
 
@@ -30,13 +30,13 @@ dependencies {
     <dependency>
         <groupId>com.github.fcannizzaro</groupId>
         <artifactId>resourcer</artifactId>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
     </dependency>
 </dependencies>
 ```
 
 ###  Download JAR
-[Release 1.0.6](https://github.com/fcannizzaro/resourcer/releases/tag/1.0.6)
+[Release 1.0.7](https://github.com/fcannizzaro/resourcer/releases/tag/1.0.7)
 
 # Project Structure
 ```
@@ -164,6 +164,16 @@ AudioInputStream audio;
     <double  name="number3">150</double>
     <long    name="number4">150000</long>
     <color   name="color01">#000</color>
+</resources>
+```
+
+## [material-colors](https://github.com/fcannizzaro/material-colors) integration
+if material-colors is imported in the project you can use it like
+```xml
+<?xml version="1.0"?>
+<resources>
+    <color name="primary">@color/indigo_500</color>
+    <color name="accent" >@color/pink_accent_400</color>
 </resources>
 ```
 

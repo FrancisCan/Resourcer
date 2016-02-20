@@ -16,6 +16,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -216,9 +217,7 @@ public class Resourcer {
         try {
             String res = getPath(annotation.value(), AUDIO_DIR);
             field.set(annotated, AudioSystem.getAudioInputStream(new File(res)));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (UnsupportedAudioFileException e) {
+        } catch (IOException | UnsupportedAudioFileException e) {
             e.printStackTrace();
         }
     }
@@ -352,7 +351,7 @@ public class Resourcer {
                     NodeList list = ele.getElementsByTagName(element);
 
                     if (values.get(element) == null)
-                        values.put(element, new HashMap<String, Object>());
+                        values.put(element, new HashMap<>());
 
                     for (int j = 0; j < list.getLength(); j++) {
 
@@ -377,7 +376,21 @@ public class Resourcer {
                                 valueDefined = Long.valueOf(value);
                                 break;
                             case COLOR:
-                                valueDefined = Color.decode(value);
+
+                                if (value.matches("@color/.*")) {
+
+                                    try {
+                                        Class<?> c = Class.forName("com.github.fcannizzaro.material.Colors");
+                                        Object colors = c.getDeclaredField(value.replace("@color/", "")).get(c);
+                                        Method asColor = c.getMethod("asColor");
+                                        valueDefined = asColor.invoke(colors);
+
+                                    } catch (Exception e) {
+                                        System.out.println("ERROR Resourcer - Cannot bind " + value);
+                                    }
+
+                                } else
+                                    valueDefined = Color.decode(value);
                                 break;
                         }
 
