@@ -177,7 +177,7 @@ if material-colors is imported in the project you can use it like
 </resources>
 ```
 
-## @StringRes()
+## @StringRes
 ```java
 @StringRes()
 String name;
@@ -186,20 +186,20 @@ String name;
 @StringRes("name")
 String anotherName;
 ```
-## @IntegerRes()
+## @IntegerRes
 Integer / int type
 
-## @BooleanRes()
+## @BooleanRes
 Boolean / boolean type
 
-## @DoubleRes()
+## @DoubleRes
 Double / double type
 
-## @FloatRes()
+## @FloatRes
 Float / float type
 
-## @LongRes()
+## @LongRes
 Long / long type
 
-## @ColorRes()
+## @ColorRes
 Color type
