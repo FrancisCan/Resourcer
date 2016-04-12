@@ -90,7 +90,7 @@ public class Another{
 ```
 
 # Sample
-See [Sample](https://github.com/FrancisCan/Resourcer/tree/master/Sample)
+See [Sample](https://github.com/fcannizzaro/resourcer/tree/master/sample)
 
 # File
 
